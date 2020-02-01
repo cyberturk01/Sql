@@ -1,3 +1,15 @@
+--startsWith= Gok%
+--endsWith= %han
+--contains= %kha%
+select * FROM employees
+where first_name like 'C%'; -- like key word for to select first elements on the query
+
+select * FROM employees
+where first_name like 'D__'; --one underscore represent one letter or charachter to call 
+
+select * FROM employees
+where first_name like '__z__';
+
 --how can we rename the column when we displayed
 select first_name as "Given Name", last_name as "surname"
 from employees;

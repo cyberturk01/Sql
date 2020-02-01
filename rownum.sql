@@ -5,8 +5,11 @@ where salary=(select max(salary) from employees);
 
 
 ---ONEMLI second highest salary
-select * from employees where salary=(select max(salary) from employees
-where salary<(select max(salary) from employees));
+select * from employees 
+where salary=(
+    select max(salary) from employees
+    where salary<(select max(salary) from employees)
+    );
 
 select * from employees
 where rownum<=100;

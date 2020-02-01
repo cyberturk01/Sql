@@ -10,11 +10,23 @@ select first_name, last_name, department_name, city
 from employees e inner JOIN departments d
 on e.department_id= d.department_id;
 
+--get me first_name,last_name and deparnment name,city for all employees;
+select first_name,last_name,department_name,city
+from employees e join departments d
+on e.department_id = d.department_id
+join locations l
+on d.location_id=l.location_id;
+
+
+--get me first_name,last_name and deparnment name,city,country_name for all employees;
 select first_name, last_name, department_name, city, country_name
 from employees e inner JOIN departments d
 on e.department_id= d.department_id
 join locations l 
 on d.location_id=l.location_id
 join countries c
-on l.country_id=c.country_id;
+on l.country_id=c.country_id
+where first_name='Steven';
 
+--find duplicate names in employess (how many times they appear)
+select distinct first_name, count(*) from employees group by first_name having count(*)>1;

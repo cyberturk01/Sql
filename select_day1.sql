@@ -10,6 +10,7 @@ select first_name, last_name, salary from employees;
 
 select street_address, postal_code from locations;
 
+--distict keyword : removes duplicate values
 select DISTINCT first_name from employees;
 
 select DISTINCT region_id FROM countries;
