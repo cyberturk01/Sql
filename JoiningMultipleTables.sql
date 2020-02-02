@@ -30,3 +30,8 @@ where first_name='Steven';
 
 --find duplicate names in employess (how many times they appear)
 select distinct first_name, count(*) from employees group by first_name having count(*)>1;
+
+select e1.employee_id,e1.first_name,e1.last_name,e1.manager_id,e2.employee_id,e2.first_name as "manager_firstname",e2.last_name as " manager_lastname"
+from employees e1 left join employees e2
+ON e1.manager_id =e2.employee_id
+order by e1.employee_id;
